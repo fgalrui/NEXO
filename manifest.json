@@ -1,0 +1,9 @@
+{
+  "short_name": "NEXO",
+  "name": "NEXO Player",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "description": "Un reproductor moderno para tus listas de IPTV y torrents."
+}

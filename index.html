@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXO</title>
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Webtorrent script loaded directly for stability -->
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+    <!-- Google Cast SDK -->
+    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+    <style>
+        /* Custom styles for better aesthetics */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #0f172a; /* bg-slate-900 */
+        }
+        /* Custom styles for scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track { 
+            background: #1e293b; /* bg-slate-800 */ 
+        }
+        ::-webkit-scrollbar-thumb { 
+            background: #475569; /* bg-slate-600 */ 
+            border-radius: 4px; 
+        }
+        ::-webkit-scrollbar-thumb:hover { 
+            background: #64748b; /* bg-slate-500 */ 
+        }
+
+        /* Custom styles for range inputs (sliders) */
+        input[type="range"] {
+            -webkit-appearance: none; appearance: none;
+            width: 100%; cursor: pointer; outline: none;
+            border-radius: 9999px; background-color: transparent; height: 6px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            height: 16px; width: 16px;
+            background-color: #ffffff;
+            border-radius: 50%; border: none;
+            transition: background-color 0.2s ease-in-out;
+        }
+        input[type="range"]::-moz-range-thumb {
+            height: 16px; width: 16px;
+            background-color: #ffffff;
+            border-radius: 50%; border: none;
+            transition: background-color 0.2s ease-in-out;
+        }
+        /* Dynamic subtitle styling via CSS variables */
+        video::cue {
+            font-size: var(--subtitle-font-size, 1.25rem);
+            color: var(--subtitle-color, #ffffff);
+            background-color: var(--subtitle-bg-color, rgba(0, 0, 0, 0.7));
+            font-family: sans-serif;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <noscript>Debes habilitar JavaScript para ejecutar esta aplicación.</noscript>
+    <div id="root"></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai",
+    "hls.js": "https://esm.sh/hls.js@1.5.8",
+    "react": "https://esm.sh/react@18.3.1",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "react-dropzone": "https://esm.sh/react-dropzone@14.2.3?external=react",
+    "fflate": "https://esm.sh/fflate@0.8.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+
+
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
